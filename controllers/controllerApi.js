@@ -17,7 +17,7 @@ const getAllGames = async (req,res) => {
 
 const searchGameByName = async(req,res) => {
     try {
-        const data = await Games.find({ "nombre": req.params.name }).populate("empresa");
+        const data = await Games.find({ "nombre": req.params.nombre }).populate("empresa");
         res.status(200).json(data);
     } catch (err) {
         res.send("ERROR")
@@ -26,7 +26,7 @@ const searchGameByName = async(req,res) => {
 
 const searchGameByCompany = async(req,res) => {
     try {
-            const data = await Makers.find({ "nombre": req.params.company }).populate("juegos");
+            const data = await Makers.find({ "nombre": req.params.empresa }).populate("juegos");
             res.status(200).json(data);
     } catch (err) {
         res.send("ERROR")
