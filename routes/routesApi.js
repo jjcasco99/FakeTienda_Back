@@ -4,7 +4,7 @@ const controllerGames = require('../controllers/controllerApi');
 
 routes.get("/games", controllerGames.getAllGames);
 routes.get("/games/:nombre?", controllerGames.searchGameByName);
-routes.get("/games/:empresa?", controllerGames.searchGameByCompany);
+routes.get("/games/empresa/:empresa?", controllerGames.searchGameByCompany);
 
 
 module.exports = routes;
